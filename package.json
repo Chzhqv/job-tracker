@@ -1,0 +1,26 @@
+{
+  "name": "job-tracker",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A personal job application tracker (Kanban-style: Applied, Interview, Offer, Rejected).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chzhqv/job-tracker.git"
+  },
+  "keywords": [],
+  "author": "chzhqv <nikitachzhkv@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
+    "pino-pretty": "^13.1.3"
+  }
+}
