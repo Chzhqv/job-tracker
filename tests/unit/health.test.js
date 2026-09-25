@@ -1,6 +1,5 @@
 const request = require('supertest');
 const app = require('../../src/app');
-const { destination } = require('pino');
 
 describe('GET /', () => {
 
