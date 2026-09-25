@@ -1,7 +1,7 @@
 const { readApplication } = require('../../model/applications');
 
 module.exports = (req, res) => {
-  const application = readApplication(req.params.id);
+  const application = readApplication(req.params.id, req.user.username);
 
   if (!application) {
     return res.status(404).json({

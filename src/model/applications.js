@@ -1,8 +1,7 @@
-// In-memory "database" — just an array, lives only as long as the process runs
 let applications = [];
 
-function listApplications() {
-  return applications;
+function listApplications(ownerId) {
+  return applications.filter((a) => a.ownerId === ownerId);
 }
 
 function writeApplication(application) {
@@ -10,16 +9,16 @@ function writeApplication(application) {
   return application;
 }
 
-function readApplication(id) {
-  return applications.find((a) => a.id === id);
+function readApplication(id, ownerId) {
+  return applications.find((a) => a.id === id && a.ownerId === ownerId);
 }
 
-function deleteApplication(id) {
-  applications = applications.filter((a) => a.id !== id);
+function deleteApplication(id, ownerId) {
+  applications = applications.filter((a) => !(a.id === id && a.ownerId === ownerId));
 }
 
-function updateApplication(id, updates) {
-  const application = readApplication(id);
+function updateApplication(id, ownerId, updates) {
+  const application = readApplication(id, ownerId);
   if (!application) {
     return undefined;
   }

@@ -4,6 +4,7 @@ const { writeApplication } = require('../../model/applications');
 module.exports = (req, res) => {
   const application = {
     id: crypto.randomUUID(),
+    ownerId: req.user.username,
     company: req.body.company,
     role: req.body.role,
     status: req.body.status || 'applied',
